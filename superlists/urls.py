@@ -18,8 +18,8 @@ from lists import views as list_views
 from lists import urls as list_urls
 
 urlpatterns = [
-    url(r'^new$', views.new_list, name='new_list'),
-    url(r'^(\d+)/$', views.view_list, name='view_list'),
+    url(r'^$', list_views.home_page, name='home'),
+    url(r'^lists/', include(list_urls)),
     # url(r'^admin/', include(admin.site.urls)),
 ]
 
