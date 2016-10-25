@@ -5,9 +5,9 @@ Description=Gunicorn server for SITENAME
 Restart=on-failure
 User=elspeth
 WorkingDirectory=/home/elspeth/sites/SITENAME/source
-ExecStart=/home/elspeth/sites/SITENAME/virutalenv/gunicorn \
-	--bind unix:/tmp/SITENAME.socket \
-	superlists.wsgi:application
+ExecStart=/home/elspeth/sites/SITENAME/virtualenv/bin/gunicorn \
+    --bind unix:/tmp/SITENAME.socket \
+    superlists.wsgi:application
 
 [Install]
 WantedBy=multi-user.target
