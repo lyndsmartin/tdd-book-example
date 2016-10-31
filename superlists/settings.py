@@ -37,9 +37,21 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'lists',
+    'accounts',
 ]
 
-MIDDLEWARE = [
+AUTH_USER_MODEL = 'accounts.User'
+AUTHENTICATION_BACKENDS = (
+    'accounts.authentication.PasswordlessAuthenticationBackend',
+)
+
+EMAIL_USE_TLS = True
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587
+EMAIL_HOST_USER = 'lynnmargmar@gmail.com'
+EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_PASSWORD')
+
+MIDDLEWARE_CLASSES = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
