@@ -1,8 +1,8 @@
 from django.test import TestCase
-from django.contrib.auth import get_user_model
+from django.contrib import auth
 from accounts.models import Token
 
-User = get_user_model()
+User = auth.get_user_model()
 
 
 class UserModelTest(TestCase):
@@ -20,6 +20,10 @@ class UserModelTest(TestCase):
     	user.backend = ''
     	request = self.client.request().wsgi_request
     	auth.login(request, user)
+
+    def test_email_is_primary_key(self):
+        user = User()
+        self.assertFalse(hasattr(user, 'id'))
 
 class TokenModelTest(TestCase):
 

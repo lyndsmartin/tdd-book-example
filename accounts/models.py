@@ -13,5 +13,5 @@ class User(models.Model):
         return True
 
 class Token(models.Model):
-    email = models.EmailField()
+    email = models.EmailField(primary_key=True)
     uid = models.CharField(default=uuid.uuid4, max_length=40)
