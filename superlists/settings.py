@@ -49,7 +49,7 @@ EMAIL_USE_TLS = True
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587
 EMAIL_HOST_USER = 'lynnmargmar@gmail.com'
-EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_PASSWORD')
+EMAIL_HOST_PASSWORD = 'Chrism08'
 
 MIDDLEWARE_CLASSES = [
     'django.middleware.security.SecurityMiddleware',
